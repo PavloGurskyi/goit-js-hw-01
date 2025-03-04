@@ -60,3 +60,33 @@
 
 //todo === методи масивів ===
 
+//* .join() - склеїти елементи масиву в рядок
+
+// const users = ['Elva', 'Lily', 'Derek', 'Derek']
+// console.log(users); // ['Elva', 'Lily', 'Derek', 'Derek']
+// const usersStr = users.join();
+// console.log(usersStr); // Elva,Lily,Derek,Derek - суцільний рядок з комами
+
+// // з роздільником ', '
+
+// const usersStr2 = users.join(', ')
+// console.log(usersStr2); // Elva, Lily, Derek, Derek - з роздільником
+
+// //* .split() - розбити рядок на елементи масиву
+
+// const phoneNumberStr = '+380961111111,+380730897633,+380633610751';
+// const phoneNumberArr = phoneNumberStr.split(',');
+// console.log(phoneNumberArr); // ['+380961111111', '+380730897633', '+380633610751']
+// console.log(phoneNumberArr[2]); // +380633610751
+
+//* .slice() - зробити копію масиву
+
+// const users = ['Elva', 'Lily', 'John', 'Derek'];
+// const usersCopy = users.slice(1, users.length - 1); // не включно
+// console.log(users); // ['Elva', 'Lily', 'Derek', 'Derek']
+// console.log(usersCopy); // ['Lily', 'John'] - не включно
+
+// usersCopy[0] = 'Nina'
+
+// console.log(users); // ['Elva', 'Lily', 'John', 'Derek']
+// console.log(usersCopy) // ['Nina', 'John'] - 1 став 0
