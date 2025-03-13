@@ -833,7 +833,7 @@ console.log(isAdult);*/
 //! =============== МЕТОДИ РЯДКІВ ===============
 
 //! .slice();
-//! .toLowerCase();
+//! .toLowerCase() / toUpperCase()
 //! .includes();
 //! .startsWith() / .endsWith();
 //! .indexOf();

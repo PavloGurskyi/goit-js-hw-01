@@ -487,11 +487,25 @@
 
 //! ===== Методи масивів =====
 
+//? .join() - масив в рядок;
+//? .split() - рядок в масив;
 
 
+//? масив в рядок і кількість симолів
 
+// function getLength(array) {
+//         return array.join('').length;
+//   }
+// console.log(getLength(["Mango", "hurries", "to", "the", "train"])); // 22
 
+//? змінити case (snake_ to kebab-)
 
+// const transform = function (string) {
+//     const words = string.split('_');
+//     return words.join('-')
+// }
+
+// console.log(transform("user_age"));
 
 //! ===== Ітерація по масиву =====
 
@@ -500,3 +514,76 @@
 
 
 //! ===== аргументи
+
+//* function sum (a,b) {
+
+// function sum (a,b) {
+//     console.log(arguments);
+//     return a+b;
+// }
+// console.log(sum (2,6));
+
+//* function multiply () {}
+
+// function multiply () {
+//     let total = 1;
+//     for (const arg of arguments) {
+//         total *= arg;
+//     }
+//     return total;
+// }
+// console.log(multiply(3,2));
+
+//* Створити масив з псевдомасива arguments
+
+//* Array.from()
+
+// function foo() {
+//     return Array.from(arguments).join(', ') // 1, 2, 3
+
+// }
+// console.log(foo(1,2,3));
+
+//todo == createReversedArray == .toReversed()
+
+// function createReversedArray() {
+//     return Array.from(arguments).toReversed()
+// }
+// console.log(createReversedArray(1,2,3,4));
+
+//todo == параметри функції за замовчуванням ==
+// function greet (username = "Pavlo") {
+//     console.log(`Hello, ${username}`);
+// }
+// greet();
+// greet("Johny");
+
+
+// function greet(username = "Guest") {
+//     console.log(`Hello, ${username}!`);
+//   }
+
+//   greet("Jacob"); // "Hello, Jacob!"
+//   greet();        // "Hello, Guest!"
+
+//* function count (from, to, step = 1)
+
+// function count (from, to, step = 1) {
+//     console.log(`from ${from} to ${to}, step: ${step}`);
+// }
+// count(1,9,2)
+
+//* calculateTax
+
+// function calculateTax(amount, taxRate = 0.2) {
+//     const tax = amount * taxRate;
+//     return tax;
+// }
+// console.log(calculateTax(200));
+
+//todo ================================================== Конспект - 3 ==================================================
+//todo ============================================== function expression ===============================================
+
+//* function foo () {} — function declaration - оголошення функції
+//! const foo = function () {} — function expression - НЕ МОЖНА (!) викликати до місця створення - функціональний вираз
+
