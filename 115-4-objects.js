@@ -628,39 +628,39 @@
 //todo ==================================================== hw-04-01 ====================================================
 //todo ================================================== 13.03.25 (ЧТ) =================================================
 //todo ==================================================================================================================
-console.log('task-1');
+// console.log('task-1');
 
 
-function isEnoughCapacity(products, containerSize) {
-    let totalAmo = 0;
-    const amounts = Object.values(products);
-    for (const amount of amounts) {
-        totalAmo += amount;
-    }
-    return totalAmo <= containerSize
-}
-console.log(
-    isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
-  ); // true
+// function isEnoughCapacity(products, containerSize) {
+//     let totalAmo = 0;
+//     const amounts = Object.values(products);
+//     for (const amount of amounts) {
+//         totalAmo += amount;
+//     }
+//     return totalAmo <= containerSize
+// }
+// console.log(
+//     isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
+//   ); // true
   
-  console.log(
-    isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
-  ); // false
+//   console.log(
+//     isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
+//   ); // false
   
-  console.log(
-    isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
-  ); // true
+//   console.log(
+//     isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
+//   ); // true
   
-  console.log(
-    isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
-  ); // false
+//   console.log(
+//     isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
+//   ); // false
 
 
 //todo ==================================================== hw-04-02 ====================================================
 //todo ================================================== 13.03.25 (ЧТ) =================================================
 //todo ==================================================================================================================
-console.log(' ');
-console.log('task-2');
+// console.log(' ');
+// console.log('task-2');
 
 // const days = [
 //       { day: "monday", calories: 3010 },
@@ -680,70 +680,70 @@ console.log('task-2');
 // console.log(calArr);
 
 
-function calcAverageCalories(days) {
+// function calcAverageCalories(days) {
 
-    if (days.length === 0) {
-        return 0;
-    } else {
-    let totalCalories = 0;
-    for (const caloria of days) {
-        totalCalories += caloria.calories
-    };
-    return totalCalories / days.length;
-}
-}
-console.log(
-    calcAverageCalories([
-      { day: "monday", calories: 3010 },
-      { day: "tuesday", calories: 3200 },
-      { day: "wednesday", calories: 3120 },
-      { day: "thursday", calories: 2900 },
-      { day: "friday", calories: 3450 },
-      { day: "saturday", calories: 3280 },
-      { day: "sunday", calories: 3300 }
-    ])
-  ); // 3180
+//     if (days.length === 0) {
+//         return 0;
+//     } else {
+//     let totalCalories = 0;
+//     for (const caloria of days) {
+//         totalCalories += caloria.calories
+//     };
+//     return totalCalories / days.length;
+// }
+// }
+// console.log(
+//     calcAverageCalories([
+//       { day: "monday", calories: 3010 },
+//       { day: "tuesday", calories: 3200 },
+//       { day: "wednesday", calories: 3120 },
+//       { day: "thursday", calories: 2900 },
+//       { day: "friday", calories: 3450 },
+//       { day: "saturday", calories: 3280 },
+//       { day: "sunday", calories: 3300 }
+//     ])
+//   ); // 3180
   
-  console.log(
-    calcAverageCalories([
-      { day: "monday", calories: 2040 },
-      { day: "tuesday", calories: 2270 },
-      { day: "wednesday", calories: 2420 },
-      { day: "thursday", calories: 1900 },
-      { day: "friday", calories: 2370 },
-      { day: "saturday", calories: 2280 },
-      { day: "sunday", calories: 2610 }
-    ])
-  ); // 2270
+//   console.log(
+//     calcAverageCalories([
+//       { day: "monday", calories: 2040 },
+//       { day: "tuesday", calories: 2270 },
+//       { day: "wednesday", calories: 2420 },
+//       { day: "thursday", calories: 1900 },
+//       { day: "friday", calories: 2370 },
+//       { day: "saturday", calories: 2280 },
+//       { day: "sunday", calories: 2610 }
+//     ])
+//   ); // 2270
   
-  console.log(
-    calcAverageCalories([])
-  ); // 0
+//   console.log(
+//     calcAverageCalories([])
+//   ); // 0
 
 
 //todo ==================================================== hw-04-03 ====================================================
 //todo ================================================== 13.03.25 (ЧТ) =================================================
 //todo ==================================================================================================================
-console.log(' ');
-console.log('task-3');
+// console.log(' ');
+// console.log('task-3');
 
-const profile = {
-    username: "Jacob",
-    playTime: 300,
-    getInfo() {
-        return `${this.username} has ${this.playTime} active hours!`
-    },
-    changeUsername(newName) {
-        this.username = newName;
-    },
-    updatePlayTime(hours) {
-        this.playTime += hours;
-    }
-};
-console.log(profile.getInfo()); // "Jacob has 300 active hours!"
+// const profile = {
+//     username: "Jacob",
+//     playTime: 300,
+//     getInfo() {
+//         return `${this.username} has ${this.playTime} active hours!`
+//     },
+//     changeUsername(newName) {
+//         this.username = newName;
+//     },
+//     updatePlayTime(hours) {
+//         this.playTime += hours;
+//     }
+// };
+// console.log(profile.getInfo()); // "Jacob has 300 active hours!"
 
-profile.changeUsername("Marco");
-console.log(profile.getInfo()); // "Marco has 300 active hours!"
+// profile.changeUsername("Marco");
+// console.log(profile.getInfo()); // "Marco has 300 active hours!"
 
-profile.updatePlayTime(20);
-console.log(profile.getInfo()); // "Marco has 320 active hours!"
+// profile.updatePlayTime(20);
+// console.log(profile.getInfo()); // "Marco has 320 active hours!"
