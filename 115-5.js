@@ -602,3 +602,381 @@
 //todo =================================
 //todo ============= find ==============
 //todo =================================
+
+// const colorPickerOptions = [
+//   { label: "red", color: "#F44336" },
+//   { label: "green", color: "#4CAF50" },
+//   { label: "blue", color: "#2196F3" },
+//   { label: "pink", color: "#E91E63" },
+//   { label: "indigo", color: "#3F51B5" },
+// ];
+// const found = colorPickerOptions.find(option => option.label === 'pink');
+// console.log(found);
+
+//todo == auto == userByEmail ==
+
+// const getUserWithEmail = (users, email) => {
+//   return users.find(user => user.email === email);
+// };
+// console.log(getUserWithEmail(users, "shereeanthony@kog.com"));
+
+
+//todo ==================================
+//todo ============= every ==============
+//todo ==================================
+
+// console.log([1,2,3,4,5,6].every(value => value >= 0)); // true
+
+// const nums = [1,2,3,-10,0];
+// console.log(nums.every(num => num >= 0)); //false
+
+// const products = [
+// 	{ name: "apple", quantity: 2 },
+// 	{ name: "orange", quantity: 5 },
+// 	{ name: "plum", quantity: 0 },
+// ];
+
+// const hasEvery = products.every(prod => prod.quantity > 0);
+// console.log(hasEvery);
+
+//todo == auto == isActive == //false
+
+// const isEveryUserActive = (users) => {
+//   return users.every(user => user.isActive === true);
+// };
+// console.log(isEveryUserActive(users));
+
+//todo ===== коротший запис від Чату =====
+
+// const user37 = (users) => users.find(user => user.age === 37);
+
+// console.log(user37(users));
+
+//todo =================================
+//todo ============= some ==============
+//todo =================================
+
+// console.log([1,-2,3].some(num => num < 0)); //true
+
+//todo == isAnyUserActive ==
+
+// const isAnyUserActive = (users) => {
+//   return users.some(user => user.isActive === true);
+// };
+// console.log(isAnyUserActive(users));
+
+// const isAnyUserActive = (users) => users.some(user => user.isActive);
+// console.log(isAnyUserActive(users));
+
+
+//todo ===================================
+//todo ============= reduce ==============
+//todo ===================================
+
+//* array.reduce(acc, element, index, array) { }
+
+//? Задачі від Чатіка
+
+//* сума елементів
+
+// const arr = [1,2,3,4,5];
+// const sum = arr.reduce((acc, num) => acc + num, 0)
+// console.log(sum); // 15
+
+//* пошук найбільшого
+
+// const numbers = [4, 12, 7, 25, 8];
+// const max = numbers.reduce((acc, num) => (acc > num ? acc : num), numbers[0])
+// console.log(max); // 25
+
+//todo == auto == totalPlayTime ==
+
+// const players = {
+//   mango: 1270,
+//   poly: 468,
+//   ajax: 710,
+//   kiwi: 244,
+// };
+// const playtimes = Object.values(players); // [1270, 468, 710, 244]
+
+// const totalPlayTime = playtimes.reduce((acc, playtime) => acc + playtime, 0);
+
+// const averagePlayTime = totalPlayTime / playtimes.length;
+
+// console.log(totalPlayTime);
+// console.log(averagePlayTime);
+
+//todo == total & average ==
+
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+//   { name: "Houston", score: 64 },
+// ];
+
+// const total = students.reduce((acc, student) => acc + student.score, 0);
+// console.log(total);
+// const average = total / students.length;
+// console.log(average);
+
+//todo == totalAveragePlaytimePerGame ==
+
+// const players = [
+//   { name: "Mango", playtime: 1270, gamesPlayed: 4 },
+//   { name: "Poly", playtime: 469, gamesPlayed: 2 },
+//   { name: "Ajax", playtime: 690, gamesPlayed: 3 },
+//   { name: "Kiwi", playtime: 241, gamesPlayed: 1 },
+// ];
+
+// const totalAveragePlaytimePerGame = players.reduce((acc, player) => acc + 
+// (player.playtime / player.gamesPlayed), 0);
+
+// const onePlayTime = players.reduce((acc, player) => acc + 
+// (player.playtime / player.gamesPlayed), 0);
+// console.log(onePlayTime);
+
+// console.log(1270/4 + 469/2 + 690/3 + 241);
+
+//todo == calculateTotalBalance ==
+
+// const users = [
+//   {
+//     name: "Moore Hensley",
+//     email: "moorehensley@indexia.com",
+//     eyeColor: "blue",
+//     friends: ["Sharron Pace"],
+//     isActive: false,
+//     balance: 2811,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sharlene Bush",
+//     email: "sharlenebush@tubesys.com",
+//     eyeColor: "blue",
+//     friends: ["Briana Decker", "Sharron Pace"],
+//     isActive: true,
+//     balance: 3821,
+//     gender: "female"
+//   },
+//   {
+//     name: "Ross Vazquez",
+//     email: "rossvazquez@xinware.com",
+//     eyeColor: "green",
+//     friends: ["Marilyn Mcintosh", "Padilla Garrison", "Naomi Buckner"],
+//     isActive: false,
+//     balance: 3793,
+//     gender: "male"
+//   },
+//   {
+//     name: "Elma Head",
+//     email: "elmahead@omatom.com",
+//     eyeColor: "green",
+//     friends: ["Goldie Gentry", "Aisha Tran"],
+//     isActive: true,
+//     balance: 2278,
+//     gender: "female"
+//   },
+//   {
+//     name: "Carey Barr",
+//     email: "careybarr@nurali.com",
+//     eyeColor: "blue",
+//     friends: ["Jordan Sampson", "Eddie Strong"],
+//     isActive: true,
+//     balance: 3951,
+//     gender: "male"
+//   },
+//   {
+//     name: "Blackburn Dotson",
+//     email: "blackburndotson@furnigeer.com",
+//     eyeColor: "brown",
+//     friends: ["Jacklyn Lucas", "Linda Chapman"],
+//     isActive: false,
+//     balance: 1498,
+//     gender: "male"
+//   },
+//   {
+//     name: "Sheree Anthony",
+//     email: "shereeanthony@kog.com",
+//     eyeColor: "brown",
+//     friends: ["Goldie Gentry", "Briana Decker"],
+//     isActive: true,
+//     balance: 2764,
+//     gender: "female"
+//   }
+// ]
+
+// const calculateTotalBalance = (users) => {
+//   return users.reduce((acc, user) => acc + user.balance, 0)
+// };
+
+// console.log(calculateTotalBalance(users));
+
+//todo =====================================
+//todo ============= toSorted ==============
+//todo =====================================
+
+// const nums = [1,3,2];
+// const sort = nums.toSorted();
+// console.log(sort); // [1,2,3]
+
+//todo == числа сортуються за юнікодом ==
+
+// const scores = [27, 2, 41, 4, 7, 3, 75];
+
+// console.log(scores.toSorted()); // [2, 27, 3, 4, 41, 7, 75]
+
+//todo == масив рядків сортується за алфавітом ==
+
+// const students = ["Jacob", "Artemis", "Solomon", "Adrian", "Kai", "Ganymede"];
+
+// console.log(students.toSorted()); // [ "Adrian", "Artemis", "Ganymede", "Jacob", "Kai", "Solomon" ]
+
+//todo == порядковий номер великих літер менший, ніж у малих ==
+
+// const letters = ["b", "B", "a", "A", "c", "C"];
+
+// console.log(letters.toSorted()); // ["A", "B", "C", "a", "b", "c"]
+
+//todo == releadeDates ==
+
+// const releaseDates = [2016, 1967, 2008, 1984, 1973, 2012, 1997];
+// const authors = [
+//   "Tanith Lee",
+//   "Bernard Cornwell",
+//   "Robert Sheckley",
+//   "Fyodor Dostoevsky",
+// ];
+
+// const ascendingReleaseDates = releaseDates.toSorted();
+// console.log(ascendingReleaseDates);
+// const alphabeticalAuthors = authors.toSorted();
+// console.log(alphabeticalAuthors);
+
+//todo == свій порядок ==
+
+// const scores = [61, 19, 74, 35, 92, 56];
+// const asc = scores.toSorted((a, b) => a - b);
+// const desc = scores.toSorted((a, b) => b - a);
+// console.log(asc); // [19, 35, 56, 61, 74, 92]
+// console.log(desc); // [92, 74, 61, 56, 35, 19]
+
+//todo == сортування рядків ==
+
+// const students = ["Jacob", "Artemis", "Solomon", "Adrian", "Kai", "Ganymede"];
+// const asc = students.toSorted((a,b) => a.localeCompare(b));
+// console.log(asc);
+// const desc = students.toSorted((a,b) => b.localeCompare(a));
+// console.log(desc);
+
+//todo == asc.scores == desc.scores == alph.names ==
+
+// const students = [
+//   { name: "Mango", score: 83 },
+//   { name: "Poly", score: 59 },
+//   { name: "Ajax", score: 37 },
+//   { name: "Kiwi", score: 94 },
+// ];
+
+// const asc = students.toSorted((a,b) => a.score - b.score);
+// console.log(asc);
+// const desc = students.toSorted((a,b) => b.score - a.score);
+// console.log(desc);
+// const alph = students.toSorted((a,b) => a.name.localeCompare(b.name));
+// console.log(alph);
+
+//todo == auto ==
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   {
+//     title: "Redder Than Blood",
+//     author: "Tanith Lee",
+//     rating: 7.94,
+//   },
+//   {
+//     title: "Enemy of God",
+//     author: "Bernard Cornwell",
+//     rating: 8.67,
+//   },
+// ];
+
+// const sortedByAuthorName = books.toSorted((a,b) => a.author.localeCompare(b.author));
+// console.log(sortedByAuthorName);
+
+// const sortedByReversedAuthorName = books.toSorted((a,b) => b.author.localeCompare(a.author));
+// console.log(sortedByReversedAuthorName);
+
+// const sortedByAscendingRating = books.toSorted((a,b) => a.rating - b.rating);
+// console.log(sortedByAscendingRating);
+
+// const sortedByDescentingRating = books.toSorted((a,b) => b.rating - a.rating);
+// console.log(sortedByDescentingRating);
+
+//todo == ланцюжки методів ==
+
+// const students = [
+//   { name: "Mango", score: 83, courses: ["mathematics", "physics"] },
+//   { name: "Poly", score: 59, courses: ["science", "mathematics"] },
+//   { name: "Ajax", score: 37, courses: ["physics", "biology"] },
+//   { name: "Kiwi", score: 94, courses: ["literature", "science"] },
+// ];
+
+// const sortedByScore = students.toSorted((a,b) => a.score - b.score);
+// console.log(sortedByScore);
+// const names = sortedByScore.map(student => student.name);
+// console.log(names);
+
+// const pravilno = students.toSorted((a,b) => a.score - b.score).map(student => student.name);
+// console.log(pravilno);
+
+//todo == auto == filter + map + toSorted ==
+
+// const books = [
+//   {
+//     title: "The Last Kingdom",
+//     author: "Bernard Cornwell",
+//     rating: 8.38,
+//   },
+//   {
+//     title: "Beside Still Waters",
+//     author: "Robert Sheckley",
+//     rating: 8.51,
+//   },
+//   {
+//     title: "The Dream of a Ridiculous Man",
+//     author: "Fyodor Dostoevsky",
+//     rating: 7.75,
+//   },
+//   { title: "Redder Than Blood", author: "Tanith Lee", rating: 7.94 },
+//   {
+//     title: "The Dreams in the Witch House",
+//     author: "Howard Lovecraft",
+//     rating: 8.67,
+//   },
+// ];
+// const MIN_BOOK_RATING = 8;
+
+// const names = books.filter(book => book.rating > MIN_BOOK_RATING)
+// .map(author => author.author)
+// .toSorted((a,b) => a.localeCompare(b));
+// console.log(names);
+
+//todo ======================== hw-05-01 ==============================
+//todo ====================== 18.03.25 (ПН) ===========================
+//todo ================================================================
