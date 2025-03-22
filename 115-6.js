@@ -10,242 +10,262 @@
 //todo == auto == pizzaPalace ==
 
 // const pizzaPalace = {
-//     pizzas: ["Supercheese", "Smoked", "Four meats"],
-//     checkPizza(pizzaName) {
-//       return this.pizzas.includes(pizzaName);
-//     },
-//     order(pizzaName) {
-//       const isPizzaAvailable = this.checkPizza(pizzaName);
-  
-//       if (!isPizzaAvailable) {
-//         return `Sorry, there is no pizza named «${pizzaName}»`;
-//       }
-  
-//       return `Order accepted, preparing «${pizzaName}» pizza`;
-//     },
-//   };
+//   pizzas: ['Supercheese', 'Smoked', 'Four meats'],
+//   checkPizza(pizzaName) {
+//     return this.pizzas.includes(pizzaName);
+//   },
+//   order(pizzaName) {
+//     const isPizzaAvailable = this.checkPizza(pizzaName);
 
-//   console.log(pizzaPalace.order("Four meats"));
-
-
-
-
-
-
-//todo =======================================================================================================
-//todo ===========================================   Лекція 6-1   ============================================
-//todo ===========================================   ООП. Класи   ============================================
-//todo =======================================================================================================
-
-//? ==========================================================================================================
-//? =================================================   this   ===============================================
-//? ==========================================================================================================
-
-// const user = {
-//     userName: 'John',
-//     showThis () {
-//         console.log('this is it', this); // this посилається на об'єкт user
+//     if (!isPizzaAvailable) {
+//       return `Sorry, there is no pizza named «${pizzaName}»`;
 //     }
-// }
-// user.showThis();
 
-// // const foo = () => {
-// //     console.log(this); // undefined bo strickt, a tak to - window !
-// // }
-// // foo()
-
-// const user2 = {
-//     userName: 'Pavlo',
-//     showThis: user.showThis,
-// }
-// user2.showThis()
-
-// const user3 = {
-//     userName: 'Alice',
-//     showThis () {
-//         console.log('this is that', this);
-
-//         const foo = () => {
-//             console.log('foo', this);
-//         }
-//         foo();
-//     }
-// }
-// user3.showThis()
-
-// function showThis() {
-//     console.log('that', this);
-// }
-// // showThis(); // that undefined (window)
-
-// const user = {
-//     userName: 'Alice',
+//     return `Order accepted, preparing «${pizzaName}» pizza`;
+//   },
 // };
 
-// user.showThis = showThis;
-// user.age = 29;
+// console.log(pizzaPalace.order('Four meats'));
+
+// const user = {
+//   userName: 'Pavlo',
+//   showThis() {
+//     console.log(this);
+//   },
+// };
+// user.showThis();
+
+//todo =============================
+//todo ========== context ==========
+//todo =============================
+
+// function showThis() {
+//   console.log('show', this);
+// }
+// showThis();
+
+// const user = {
+//   userName: 'Pavlo',
+//   showThis() {
+//     console.log(this);
+//   },
+// };
+
 // console.log(user);
 
-// user.showThis();
+// user.showContext = showThis;
+// user.showContext();
+// console.log(user);
 
+//todo =============================
+//todo ========== .call() ==========
+//todo =============================
+
+// function greet(str) {
+//   console.log(`${str}, ${this.username}! Your room is ${this.room}.`);
+// }
+// const pavlo = {
+//   username: 'Pavlo',
+//   room: 12,
+// };
+// const olena = {
+//   username: 'Olena',
+//   room: 13,
+// };
+// greet.call(pavlo, 'Hello');
+// greet.call(olena, 'Hello');
+
+// function showName() {
+//   console.log(this.name);
+// }
 // const user = {
-//     userName: 'Yura',
-//     showThis () {
-//         console.log(this);
-//     }
+//   name: 'Alice',
+// };
+// showName.call(user);
+
+// function greet(name) {
+//   console.log(`Hello, ${name}! I am ${this.person}`);
 // }
-// // user.showThis()
+// const context = {
+//   person: 'Alice',
+// };
+// greet.call(context, 'Pavlo');
 
-// const foo = user.showThis;
-// console.log(foo);
-// foo()
+//todo ==============================
+//todo ========== .apply() ==========
+//todo ==============================
 
-// const user = {
-//     userName: 'Olena',
-//     showThis() {
-//         console.log(this);
-//     },
-//     showName() {
-//         console.log(this.showName);
-//     }
-// }
-// user.showThis();
+// greet.apply(olena, ['Aloha']);
 
-// const foo = user.showThis;
+//todo =============================
+//todo ========== .bind() ==========
+//todo =============================
 
-// foo();
+// const boundFoo = foo.bind(thisArg, arg1, arg2);
 
-// const lala = user.showName;
-// lala()
+// const customer = {
+//   person: 'Pavlo',
+//   sayHello() {
+//     console.log(`Hello, ${this.person}!`);
+//   },
+// };
+// customer.sayHello();
 
-// const chopShop = {
-//     stones: [
-//         {name: 'Em', price: 1300, quant: 4,},
-//         {name: 'Di', price: 2700, quant: 3,},
-//         {name: 'Sap', price: 1400, quant: 7,},
-//         {name: 'Ruby', price: 800, quant: 2,},
-//     ],
-//     calcTotalPrice(stoneName) {
-//         const stone = this.stones.find(item => item.name === stoneName);
+// const greet = customer.sayHello.bind(customer); // створили нову функцію !
 
-//         if(!stone) {
-//             return `${stoneName} not found.`
-//         }
+// greet(); // викликали
 
-//         return stone.price * stone.quant;
-//     }
-// }
-// console.log(chopShop.calcTotalPrice('Di'));
+// const customer = {
+//   first: 'Pavlo',
+//   last: 'Gurskiy',
+//   showname() {
+//     return `${this.first} ${this.last}`;
+//   },
+// };
+// console.log(customer.showname());
 
-//? ============================================================================================================
-//? =======================================   .call(), .apply(), .bind() =======================================
-//? ============================================================================================================
-
-// function showThis(toto, lala) {
-//     console.log(this);
-//     console.log(toto, lala);
+// function makeMessage(callback) {
+//   const username = callback();
+//   console.log(`Processing from ${username}`);
 // }
 
-// const objA = {
-//     a: 5,
-//     b: 10,
+// makeMessage(customer.showname.bind(customer));
+
+// const library = {
+//   books: 1923,
+//   logBookCount() {
+//     console.log(this.books);
+//   },
+// };
+
+// const showBooks = library.logBookCount.bind({ books: 724 });
+
+// showBooks();
+
+// const library = {
+//   books: 1923,
+//   logBookCount() {
+//     console.log(this.books);
+//   },
+// };
+
+// function showBooks(callback) {
+//   callback();
 // }
 
-// const objB = {
-//     x: 100,
-//     y: 200,
+// showBooks(library.logBookCount.bind(library));
+
+//todo ==> стрілки <==
+
+// const showThis = () => {
+//   console.log('this in showThis: ', this); // window
+// };
+// showThis(); // undefined (window)
+
+// const hotel = {
+//   hotelName: 'Unava',
+//   showThis() {
+//     console.log('text', this);
+//     const foo = () => {
+//       console.log('also', this);
+//     };
+//     foo();
+//   },
+// };
+// hotel.showThis();
+
+//? ==> ігнорують суворий режим <==
+
+// const a = () => {
+//   console.log(this);
+// };
+// function b() {
+//   a();
 // }
+// b.call({ user: 'Mango' });
 
-// showThis.call(objA, 'Alice', 5)
+//todo ===============================
+//todo ========== Прототипи ==========
+//todo ===============================
 
-// showThis.apply(objB, ['Pavlo', 10])
+// const objA = { a: 'objA' };
+// const objB = Object.create(objA); // objB - prototype of objA
+// console.log(objB.a); // передаємо ключ властивості 'a'
 
-
-
-// const hat = {
-//     color: 'red',
-// }
-// const sweater = {
-//     color: 'black'
-// }
-// function changeColor(color) {
-//     console.log(this);
-//     this.color = color;
-// }
-// changeColor.call(hat, 'green');
-// console.log(hat);
-
-// changeColor.apply(sweater, ['yellow']);
-// console.log(sweater);
-
-// const changeHatColor = changeColor.bind(hat, 'blue');
-
-// changeHatColor();
-// console.log(hat);
-
-// const changeSwColor = changeColor.bind(sweater);
-
-// changeSwColor('white');
-// console.log(sweater);
-
-//todo == counter ==
-
-// const counter = {
-//     value: 0,
-//     increment(value) {
-//         console.log('this', this);
-//         this.value += value;
-//     },
-//     decrement(value) {
-//         console.log(this);
-//         this.value -= value;
-//     },
-// }
-
-// function foo (value, callback) {
-//     console.log(callback);
-//     callback(value);
-// }
-
-// foo(10, counter.increment.bind(counter));
-// foo(2, counter.decrement.bind(counter));
-// foo(5, counter.decrement.bind(counter))
-
-// console.log(counter);
-
-//? ============================================================================================================
-//? ============================================= Прототип об'єкта =============================================
-//? ============================================================================================================
+//?
 
 // const animal = {
-//     legs: 4,
-// }
-
+//   legs: 4,
+// };
 // const dog = Object.create(animal);
 // dog.name = 'Torik';
 
 // console.log(dog);
+// console.log(dog.legs); // 4
+
+//todo == auto == parent`s child ==
+
+// const parent = {
+//   name: 'Stacey',
+//   surname: 'Moore',
+//   age: 54,
+//   heritage: 'Irish',
+// };
+
+// const child = Object.create(parent);
+// child.name = 'Jason';
+// child.age = 27;
+
+// console.log(child.name);
+// console.log(child.surname);
+// console.log(
+//   `${child.name} ${child.surname} is a ${parent.isPrototypeOf(
+//     child
+//   )} child of ${parent.name} ${parent.surname}.`
+// );
+
+//todo =======================================
+//todo ========== .hasOwnProperty() ==========
+//todo =======================================
+
+const animal = {
+  legs: 4,
+};
+const dog = Object.create(animal);
+dog.name = 'Rocky';
+
+// console.log(dog);
 // console.log(dog.name);
 // console.log(dog.legs);
-// console.log(dog.hasOwnProperty('name'));
+// console.log(dog.hasOwnProperty('name')); // t
+// console.log(dog.hasOwnProperty('legs')); // f
 
+//todo =================================================
+//todo ========== перебір власих властивостей ==========
+//todo =================================================
 
-//? =============================================
-//? ============= .hasOwnProperty() =============
-//? =============================================
-
-// for (const key in dog) {
-//     console.log(key, dog[key]);
+// for (const key in dog) { // перебирає всі, власні і ні
+//   console.log(key);
 // }
 
 // for (const key in dog) {
-//     if (dog.hasOwnProperty(key)) {
-//         console.log(key, dog[key]);
-//     }
+//   if (dog.hasOwnProperty(key)) {
+//? перебирає тільки власні
+//     console.log(key);
+//   }
 // }
 
+//? використовуй .Object.keys() i .Object.values() + for...of
 
-// const objC = {c: 'objC'};
+// for (const key of Object.values(dog)) {
+//   console.log(key);
+// }
+
+//todo =========================================
+//todo ========== Ланцюжки прототипів ==========
+//todo =========================================
+
+// const objC = { c: 'objC' };
 
 // const objB = Object.create(objC);
 // objB.b = 'objB';
@@ -253,62 +273,53 @@
 // const objA = Object.create(objB);
 // objA.a = 'objA';
 
-// console.log(objA);
+// console.log(objA); // {a: 'objA'}
 // console.log(objA.c); // objC
-// console.log(objA.hasOwnProperty('c')); // false
 
-//todo == cruiseControl ==
+// const apartment = {
+//   rooms: 4,
+//   floor: 2,
+//   taxFree: false,
+// };
 
-// const cruiseControl = {
-//     speed: 0,
-//     brand: 'Audi',
-//     accelerate() {
-//         this.speed += 10;
-//         console.log(`${this.brand} accelerates. Speed is ${this.speed}.`);
-//     },
-//     decrease() {
-//         if (this.speed <= 0) {
-//             console.log(`${this.brand} stopped.`);
-//             return;
-//         }
-//         this.speed -= 10;
-//         console.log(`${this.brand} is breaking. Speed is ${this.speed}.`);
-//     }
-// }
+// const condo = Object.create(apartment);
+// condo.rooms = 3;
+// console.log(condo.rooms); // 3
 
-// cruiseControl.accelerate();
-// cruiseControl.decrease();
-// cruiseControl.accelerate();
-// cruiseControl.accelerate();
-// cruiseControl.decrease();
-// cruiseControl.decrease();
-// cruiseControl.decrease();
-// console.log(cruiseControl);
+//todo ==================================================================================
+//todo =================================   Конспект 6   =================================
+//todo =====================   Об'єктно-орієнтоване пограмування   ======================
+//todo ==================================================================================
 
-//todo == maxSpeed ==
+//? =============================================
+//? ========== Процедурне пограмування ==========
+//? =============================================
 
-// const MAX_SPEED = 60;
+// const salary = 30000;
+// const overtime = 10;
+// const rate = 20;
 
-// const audi = {
-//     brand: 'audi',
-//     speed: 30,
-// }
-// const bmw = {
-//     brand: 'bmw',
-//     speed: 70,
-// }
+// const getWage = (salary, overtime, rate) => {
+//   return salary + overtime * rate;
+// };
+// console.log(getWage(salary, overtime, rate));
 
-// function speedSensor (maxSpeed) {
-//     if(this.speed <= maxSpeed) {
-//     //     return `${this.brand}'s speed is good`;
-//     // }
-//     // return `${this.brand}'s speed is over`;
+//? =============================================
+//? ==================== ООП ====================
+//? =============================================
 
-//     return this.speed <= maxSpeed ?
-//     `${this.brand}'s speed is good` :
-//     `${this.brand}'s speed is over`;
-// }
-// }
+// const employee = {
+//   salary: 30000,
+//   over: 10,
+//   rate: 20,
+//   getWage() {
+//     return this.salary + this.over * this.rate;
+//   },
+// };
 
-// console.log(speedSensor.call(audi, MAX_SPEED));
-// console.log(speedSensor.apply(bmw, [MAX_SPEED]));
+// console.log(employee.getWage());
+
+//todo ==================================================================================
+//todo =================================   Конспект 6   =================================
+//todo ===================================   Класи   ====================================
+//todo ==================================================================================
