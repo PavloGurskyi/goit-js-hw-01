@@ -1,0 +1,48 @@
+/* #region basics */
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  margin: 24px;
+  padding: 0 15px;
+}
+.usernames li {
+  padding: 8px;
+  border: 2px dashed tomato;
+  text-transform: uppercase;
+}
+
+.usernames li:not(:last-child) {
+  margin-bottom: 12px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+}
+
+.list-item {
+  padding: 8px;
+  border-style: dashed;
+  border-width: 2px;
+}
+
+.list-item:not(:last-child) {
+  margin-bottom: 8px;
+}
+
+.list-item:nth-child(odd) {
+  border-color: blueviolet;
+}
+
+.list-item:nth-child(even) {
+  border-color: tomato;
+}
+h2 {
+  font-weight: 500;
+}
+/* #endregion basics */
