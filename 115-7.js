@@ -191,6 +191,10 @@ el.textContent = 'Anya';*/
 const el = document.querySelector('.text');
 el.remove();*/
 
+//? ===================================================
+//? ==================== innerHTML ====================
+//? ===================================================
+
 //todo == 11 == innerHTML == read ==
 /*
 const article = document.querySelector('.article');
@@ -226,4 +230,31 @@ const string = `<p class="text">Nullam quis ante. Vestibulum dapibus nunc ac aug
     <a href="" class="link">Read more...</a>`;
 article.innerHTML += string;*/
 
-//todo == 15 ==
+//? ==================================================
+//? =============== insertAdjacentHTML ===============
+//? ==================================================
+
+//* element.insertAdjacentHTML(position, string)
+
+//* postions:
+//* beforebegin - перед element;
+//* afterbegin - перед дітьми;
+//* beforeend - після дітей;
+//* afterend - після element;
+
+//todo == 15 == insertAdjacentHTML ==
+/*
+const list = document.querySelector('.list');
+
+list.insertAdjacentHTML('beforebegin', '<h2>Popular technologies</h2>');
+
+const newTechs = ['React', 'TypeScript', 'Node.js'];
+const markup = newTechs
+  .map(tech => `<li class="list-item new">${tech}</li>`)
+  .join('');
+
+list.insertAdjacentHTML('beforeend', markup);*/
+
+//* =====================================================
+//* ======================= ПОДІЇ =======================
+//* =====================================================
